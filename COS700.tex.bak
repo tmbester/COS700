@@ -64,43 +64,15 @@ Investigate measures to improve user and system authentication on the
 cloud.
 
 \section{Related works:}
-This section discusses existing authentication mechanisms for public cloud solutions. This is to demonstrate that this work is grounded on existing work and does not exist in isolation. A number of authors have already made some attempts to address the issue of weak authentication on public cloud infrastructures.
+This section discusses existing authentication mechanisms for public cloud solutions. This is to demonstrate that this work is grounded on existing work and does not exist in isolation. A number of authors have already made some attempts to address the issue of weak authentication on public cloud infrastructures. For instance, \cite{Archer2009} presents some credentials (for example username and password) which is checked against registered information for said user. Should the credentials match the systems values the user is then deemed authenticated. How ever, should the store containing usernames and passwords be modified or leaked the entire system is endanger of being compromised.   
 
-For instance, \cite{Archer2009} presents some credentials (for example username and password) which is checked against registered information for said user. Should the credentials match the systems values the user is then deemed authenticated.
+A. Cecil Donald et al. \cite{A2014} proposes a novel authentication  mechanism to enhance security in the cloud environment. The use of a trusted authority that creates a digital signature to compare with the users created digital signature when services are requested from a cloud service provider. This approach uses the digital signature  contained in the Portuguese identity smart card. However, the challenge with this approach is that a breach or loss of confidentiality (if pin becomes public knowledge) would require the re-issuing of an ID card. This has the potential to render IT resources unavailable or inaccessible at least for the time it takes to issue a new ID card. If not done timeously could result in lost productivity.
 
+Richard Chow et al. \cite{Chow2010} extends the knowledge base and proposes a novel authentication framework for mobile devices to cloud services. Where the recent history and activity is used to determine the appropriate level of authentication required. A Major issue with the high emphasis on the user's mobile device is the risk of make the device an even bigger target for theft and spoofing (as seen with internet banking theft/fraud). The use of SMS history and other information form mobile devices for authentication could be seen as an invasion of the users privacy, possible exposing other unforeseen mobile security issues.
 
- A. Cecil Donald et al. \cite{A2014} proposes a novel authentication
- mechanism to enhance security in the cloud environment. The use of a
- trusted authority that creates a digital signature to compare with the
- users created digital signature when services are requested from a
- cloud service provider. This approach uses the digital signature
- contained in the Portuguese identity smart card. However, the challenge
-with this approach is that a breach or loss of
- confidentiality (if pin becomes public knowledge) would require the
- re-issuing of an ID card. This has the potential to render IT resources
-unavailable or inaccessible at least for the time it takes to issue a new
-ID card. If not done timeously could result in lost productivity.
+L. B. Jivanadham et al. cite{} proposes an integrated authentication mechanism called cloud cognitive authenticator (CCA). CCA is an application program interface (API) integrating bio-signals, one round Zero Knowledge Protocol (ZKP) for authentication and Rijndael algorithm in Advance Encryption Standard (AES). The novelty of this approaches is in the two levels of authentication. The interoperability of the CCA and AES algorithm compatibility was questioned by A. Cecil Donald cite{A2014}.   
 
-
- L.F.B Soares et al. \cite{Soares2013} suggests a model where a proxy
- VM is placed between inbound connections and cloud management
- interfaces. This novel approach of compartmentalizing VM's to limit
- the spread of security breaches. This proposed model strengthens
- security against inter VM attacks, the model can be extended to
- include multifactor authentication to improve VM access control.
-
-
- Richard Chow et al. \cite{Chow2010} extends the knowledge base and
-proposes a novel authentication
- framework for mobile devices to cloud services. Where the recent
- history and activity is used to determine the appropriate level of
- authentication required. A Major issue with the high emphasis on the
- user's mobile device is the risk of make the device an even bigger
- target for theft and spoofing (as seen with internet banking
- theft/fraud). The use of SMS history and other information form mobile
- devices for authentication could be seen as an invasion of the users
- privacy, possible exposing other unforeseen mobile security issues.
-
+L.F.B Soares et al. \cite{Soares2013} suggests a model where a proxy  VM is placed between inbound connections and cloud management interfaces. This novel approach of compartmentalizing VM's to limit the spread of security breaches. This proposed model strengthens security against inter VM attacks, the model can be extended to include multifactor authentication to improve VM access control.
 
 \section{Prototype}
 The prototype uses Xenserver for a hypervisor to supply the platform resource of a public PAAS cloud solution. Access to the cloud is controlled by a vnc-gateway server that send SAML2 authentication assertions to a IDP (WSO2 Identity server). The authentication assertion contains information gather from the connection devise (gps co-ordinates, trace route, etc.) to be compared with a risk profile for the user account.    
